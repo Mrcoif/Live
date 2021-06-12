@@ -19,7 +19,7 @@ public class SizeChangerActor extends Actor {
 
     private int size;
     private float gradientShift = size;
-    private int sizeRange = 300;
+    private int sizeRange = 200;
 
     public SizeChangerActor(GameScreen gameScreen) {
         this.gameScreen = gameScreen;

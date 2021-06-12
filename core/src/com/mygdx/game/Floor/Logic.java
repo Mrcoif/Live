@@ -12,7 +12,7 @@ public class Logic {
 
     public boolean[][][] floor;
     public int layerNum = 0;
-    public int layerLength = 1024;
+    public int layerLength = 8096;
     public int floorLength;
     public boolean fulled = false;
     public int firstLayer = 0;
@@ -62,8 +62,10 @@ public class Logic {
                 }
             }
         }
+
         if (layerNum == layerLength - 1) {
             layerNum = 0;
+            if(!fulled) firstLayer++;
             fulled = true;
         } else {
             layerNum++;
