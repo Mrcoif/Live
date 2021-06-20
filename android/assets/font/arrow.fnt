@@ -1,0 +1,8 @@
+info face="Monospaced.bold" size=70 bold=1 italic=0 charset="" unicode=0 stretchH=100 smooth=1 aa=1 padding=1,1,1,1 spacing=-2,-2
+common lineHeight=92 base=71 scaleW=512 scaleH=512 pages=1 packed=0
+page id=0 file="arrow.png"
+chars count=4
+char id=32      x=0    y=0    width=0    height=0    xoffset=-1   yoffset=0    xadvance=42   page=0    chnl=0 
+char id=45      x=85   y=0    width=33   height=9    xoffset=5    yoffset=46   xadvance=42   page=0    chnl=0 
+char id=60      x=0    y=0    width=43   height=42   xoffset=-2   yoffset=30   xadvance=42   page=0    chnl=0 
+char id=62      x=43   y=0    width=42   height=42   xoffset=2    yoffset=30   xadvance=42   page=0    chnl=0 

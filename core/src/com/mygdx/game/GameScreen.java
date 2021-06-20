@@ -68,7 +68,7 @@ public class GameScreen implements Screen {
     private void addActors() {
         stage.addActor(new RedoButtonActor(this));
         stage.addActor(new UndoButtonActor(this));
-        stage.addActor(new SizeChangerActor(this));
+        //stage.addActor(new SizeChangerActor(this));
         stage.addActor(new ClearButtonActor(this));
         stage.addActor(new RandomButtonActor(this));
     }
