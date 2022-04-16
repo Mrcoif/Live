@@ -21,4 +21,17 @@ public class RulesButtonActor  extends BaseButtonActor {
         super(new Vector2(SCREEN_WIDTH/4, SCREEN_HEIGHT/3), "rules", mainMenuScreen.live.font);
         this.mainMenuScreen = mainMenuScreen;
     }
+
+    @Override
+    protected void function() throws URISyntaxException {
+        URI uri = new URI("https://hsto.org/getpro/habr/post_images/bf4/532/d73/bf4532d731026f10377b451dcf8ecdd7.jpg");
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(uri);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

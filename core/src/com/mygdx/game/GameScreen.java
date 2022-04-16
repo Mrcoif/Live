@@ -1,20 +1,17 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.Floor.FloorActor;
 import com.mygdx.game.Floor.Logic;
-import com.mygdx.game.UserInterface.BaseButtonActor;
 import com.mygdx.game.UserInterface.ClearButtonActor;
 import com.mygdx.game.UserInterface.MinusButtonActor;
 import com.mygdx.game.UserInterface.PlusButtonActor;
 import com.mygdx.game.UserInterface.RandomButtonActor;
 import com.mygdx.game.UserInterface.RedoButtonActor;
-import com.mygdx.game.UserInterface.SizeChangerActor;
 import com.mygdx.game.UserInterface.UndoButtonActor;
+import com.mygdx.game.UserInterface.ExitButtonActor;
 
 public class GameScreen implements Screen {
 
@@ -71,6 +68,7 @@ public class GameScreen implements Screen {
     }
 
     private void addActors() {
+        stage.addActor(new ExitButtonActor(this));
         stage.addActor(new RedoButtonActor(this));
         stage.addActor(new UndoButtonActor(this));
         stage.addActor(new PlusButtonActor(this));
