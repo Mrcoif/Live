@@ -12,8 +12,8 @@ import com.mygdx.game.MainMenu.MainMenuScreen;
 
 public class Live extends Game {
 
-	public static float SCREEN_WIDTH = 720;
-	public static float SCREEN_HEIGHT = 1280;
+	public static float SCREEN_WIDTH = 500;
+	public static float SCREEN_HEIGHT = 500;
 
 	public static Vector3 touchPos;
 
@@ -24,9 +24,6 @@ public class Live extends Game {
 	
 	@Override
 	public void create () {
-		SCREEN_WIDTH = Gdx.graphics.getWidth();
-		SCREEN_HEIGHT = Gdx.graphics.getHeight();
-		System.out.println(Gdx.graphics.getWidth());
 		batch = new SpriteBatch();
 
 		camera = new OrthographicCamera();
@@ -48,6 +45,7 @@ public class Live extends Game {
 		super.render();
 
 		batch.begin();
+		//font.draw(batch, "Aasd", 275,SCREEN_HEIGHT - 5);
 		batch.end();
 
 		touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);

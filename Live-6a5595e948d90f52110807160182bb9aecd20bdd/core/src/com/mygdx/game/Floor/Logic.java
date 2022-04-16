@@ -14,7 +14,6 @@ public class Logic {
     public int layerNum = 0;
     public int layerLength = 8096;
     public int floorLength;
-    public int size;
     public boolean fulled = false;
     public int firstLayer = 0;
 
@@ -22,7 +21,6 @@ public class Logic {
 
     public Logic(int floorLength) {
         this.floorLength = floorLength;
-        size = floorLength;
         floor = new boolean[floorLength][floorLength][layerLength];
 
     }
@@ -48,7 +46,7 @@ public class Logic {
                     } else {
                         floor[i][j][0] = false;
                     }
-                } else if (!floor[i][j][layerNum] && counter == 3) {
+                } else if (!floor[i][j][layerNum] && counter >= 3) {
                     if (layerNum + 1 < layerLength) {
                         floor[i][j][layerNum + 1] = true;
                     } else {
@@ -67,7 +65,7 @@ public class Logic {
 
         if (layerNum == layerLength - 1) {
             layerNum = 0;
-            if (!fulled) firstLayer++;
+            if(!fulled) firstLayer++;
             fulled = true;
         } else {
             layerNum++;
@@ -87,7 +85,8 @@ public class Logic {
             for (int j = 0; j < floorLength; j++) {
                 if (random.nextInt(chance) == 0) {
                     floor[i][j][layerNum] = true;
-                } else {
+                }
+                else {
                     floor[i][j][layerNum] = false;
                 }
             }
@@ -107,16 +106,15 @@ public class Logic {
         if (nextLength != floorLength) {
             boolean[][][] nextFloor = new boolean[nextLength][nextLength][layerLength];
             if (nextLength > floorLength) {
-                for (int i = 0; i < nextLength; i++) {
-                    for (int j = 0; j < nextLength; j++) {
-                        if (i < floorLength && j < floorLength)
-                            nextFloor[i][j][0] = floor[i][j][layerNum];
+                for(int i = 0; i<nextLength;i++){
+                    for(int j = 0; j<nextLength;j++){
+                        if(i<floorLength && j<floorLength) nextFloor[i][j][0] = floor[i][j][layerNum];
                         else nextFloor[i][j][0] = false;
                     }
                 }
             } else if (nextLength < floorLength) {
-                for (int i = 0; i < nextLength; i++) {
-                    for (int j = 0; j < nextLength; j++) {
+                for(int i = 0; i<nextLength;i++){
+                    for(int j = 0; j<nextLength;j++){
                         nextFloor[i][j][0] = floor[i][j][layerNum];
                     }
                 }

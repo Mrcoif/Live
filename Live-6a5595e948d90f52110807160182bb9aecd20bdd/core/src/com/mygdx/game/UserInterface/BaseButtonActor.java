@@ -16,7 +16,7 @@ public class BaseButtonActor extends Actor {
 
     protected Texture texture;
     public boolean isTouched = false;
-    public int speed = 20;
+    public int speed = 10;
 
     private String name;
     private int time = 0;
@@ -31,15 +31,15 @@ public class BaseButtonActor extends Actor {
 
     @Override
     public void act(float delta) {
-        isTouched = false;
         if(time<speed) time++;
         if(time >= speed && Gdx.input.isTouched() && touchPos.x > getX() && touchPos.y > getY() && touchPos.x < getX()+getWidth() && touchPos.y < getY() + getHeight()){
             isTouched = true;
             time = 0;
+        } else{
+            isTouched = false;
         }
         if(isTouched) {
             function();
-            isTouched = false;
         }
     }
 
@@ -51,9 +51,5 @@ public class BaseButtonActor extends Actor {
 
     protected void function(){
 
-    }
-
-    public String getActorName(){
-        return name;
     }
 }

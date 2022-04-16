@@ -31,7 +31,7 @@ public class FloorActor {
     public void render() {
         boolean changed = false;
         gameScreen.live.batch.begin();
-        gameScreen.live.batch.draw(grey, 0, SCREEN_HEIGHT - SCREEN_WIDTH-1, SCREEN_WIDTH, SCREEN_WIDTH);
+        gameScreen.live.batch.draw(grey, 0, SCREEN_HEIGHT - SCREEN_WIDTH, SCREEN_WIDTH, SCREEN_WIDTH);
         for (int i = 0; i < gameScreen.logic.floorLength; i++) {
             for (int j = 0; j < gameScreen.logic.floorLength; j++) {
                 rect.set(SCREEN_WIDTH / gameScreen.logic.floorLength * j + 1, SCREEN_HEIGHT - SCREEN_WIDTH / gameScreen.logic.floorLength + 1 - (SCREEN_WIDTH / gameScreen.logic.floorLength * i + 1), SCREEN_WIDTH / gameScreen.logic.floorLength - 1, SCREEN_WIDTH / gameScreen.logic.floorLength - 1);
@@ -65,7 +65,6 @@ public class FloorActor {
                 }
             }
         }
-        gameScreen.live.batch.draw(black, 0, SCREEN_HEIGHT - SCREEN_WIDTH-1, 1, SCREEN_WIDTH);
         gameScreen.live.batch.end();
 
         if (time < 10) time++;
