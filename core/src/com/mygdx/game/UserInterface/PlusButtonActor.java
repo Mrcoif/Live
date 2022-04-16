@@ -27,7 +27,7 @@ public class PlusButtonActor extends BaseButtonActor{
     @Override
     protected void function() {
 
-        if (gameScreen.logic.size >2) {
+        if (gameScreen.logic.size >3) {
             gameScreen.logic.size--;
             gameScreen.logic.setFloorLength(gameScreen.logic.floorLength - 1);
         }
