@@ -12,6 +12,8 @@ import com.mygdx.game.GameScreen;
 import static com.mygdx.game.Live.SCREEN_WIDTH;
 import static com.mygdx.game.Live.touchPos;
 
+import java.net.URISyntaxException;
+
 public class BaseButtonActor extends Actor {
 
     protected Texture texture;
@@ -38,7 +40,11 @@ public class BaseButtonActor extends Actor {
             time = 0;
         }
         if(isTouched) {
-            function();
+            try {
+                function();
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
             isTouched = false;
         }
     }
@@ -49,7 +55,7 @@ public class BaseButtonActor extends Actor {
         font.draw(batch, name, getX() + 7, getY() + (getHeight()/6*5));
     }
 
-    protected void function(){
+    protected void function() throws URISyntaxException {
 
     }
 

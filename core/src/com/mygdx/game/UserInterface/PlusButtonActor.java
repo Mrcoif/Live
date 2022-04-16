@@ -31,6 +31,5 @@ public class PlusButtonActor extends BaseButtonActor{
             gameScreen.logic.size--;
             gameScreen.logic.setFloorLength(gameScreen.logic.floorLength - 1);
         }
-        super.function();
     }
 }

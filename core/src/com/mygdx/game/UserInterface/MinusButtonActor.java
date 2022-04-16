@@ -9,6 +9,8 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.mygdx.game.GameScreen;
 
+import java.net.URISyntaxException;
+
 public class MinusButtonActor extends BaseButtonActor{
 
     private GameScreen gameScreen;
@@ -31,6 +33,5 @@ public class MinusButtonActor extends BaseButtonActor{
             gameScreen.logic.size++;
             gameScreen.logic.setFloorLength(gameScreen.logic.floorLength+1);
         }
-        super.function();
     }
 }
